@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "860883707075",
+    "firebase_url": "https://selap-550d2.firebaseio.com",
+    "project_id": "selap-550d2",
+    "storage_bucket": "selap-550d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860883707075:android:9a976e1838cf4b9c78ae76",
+        "android_client_info": {
+          "package_name": "org.z1god.selap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860883707075-hrao9mgakju1f886o2nisegqprmrcli8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.z1god.selap",
+            "certificate_hash": "2868492ccc80b88f171fd99ab76128cb63f1b98f"
+          }
+        },
+        {
+          "client_id": "860883707075-vq3kkc4evr33lcatupq35t6ucmcqpekv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWxe4whxFv2K5TIeWGITMdlWtXEcbWAOM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860883707075-vq3kkc4evr33lcatupq35t6ucmcqpekv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
