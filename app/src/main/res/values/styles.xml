@@ -15,6 +15,11 @@
         <item name="colorAccent">@color/colorTextDark</item>
     </style>
 
+    <style name="AppTheme.CustomDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+
+
     <style name="AppTheme.InputTrasnparent">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">50dp</item>

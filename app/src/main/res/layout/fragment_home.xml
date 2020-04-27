@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false"
+
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_collapseMode="parallax">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/top_background">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/circleImageView"
+                        android:layout_width="68dp"
+                        android:layout_height="68dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@android:color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        android:layout_marginBottom="35dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/img_profil"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                        app:layout_constraintEnd_toEndOf="@+id/circleImageView"
+                        app:layout_constraintStart_toStartOf="@+id/circleImageView"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageView" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="@+id/circleImageView"
+                        app:layout_constraintEnd_toStartOf="@+id/circleImageView"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/circleImageView"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_name_profil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="hai, Ananda"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:fontFamily="@font/montserrat_bold"/>
+
+                        <TextView
+                            android:id="@+id/tv_address_profil"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_location_white"
+                            android:fontFamily="@font/montserrat"
+                            android:gravity="center_vertical"
+                            android:text="Sedang mencari alamat..."
+                            android:textColor="@android:color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:behavior_overlapTop="35dp"
+        android:background="@drawable/top_rounded"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:layout_marginTop="32dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:drawableStart="@drawable/ic_search_grey"
+                android:paddingStart="16dp"
+                android:paddingEnd="8dp"
+                android:hint="Cari nama lapangan"
+                android:textColor="#7E7E7E"
+                android:textSize="18sp"
+                android:textColorHint="#7E7E7E"
+                android:drawablePadding="4dp"
+                android:background="@drawable/background_search"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Futsal Terdekat"
+                android:layout_marginTop="24dp"
+                android:textSize="18sp"
+                android:textColor="#363636"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_terdekat"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Futsal Terbaik"
+                android:layout_marginTop="16dp"
+                android:textSize="18sp"
+                android:textColor="#363636"
+                android:fontFamily="@font/montserrat_semibold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_terbaik"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

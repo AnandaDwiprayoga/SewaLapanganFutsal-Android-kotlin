@@ -99,7 +99,9 @@
         app:layout_constraintTop_toTopOf="parent"
         android:visibility="invisible"
         android:elevation="2dp"
-        android:translationZ="2dp"/>
+        android:progressTint="#000"
+        android:progressBackgroundTint="#000"
+        android:translationZ="30dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

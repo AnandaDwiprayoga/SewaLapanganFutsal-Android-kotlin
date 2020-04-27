@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.*
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
@@ -21,6 +22,9 @@ import org.z1god.selap.R
  * A simple [Fragment] subclass.
  */
 class VerificationFragment : BottomSheetDialogFragment() {
+    companion object {
+        const val KEY_MESSAGE = "KEY_MESSAGE"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -55,7 +59,12 @@ class VerificationFragment : BottomSheetDialogFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val touchOutside  = dialog?.window?.decorView?.findViewById<View>(com.google.android.material.R.id.touch_outside);
-        touchOutside?.setOnClickListener(null);
+        touchOutside?.setOnClickListener(null)
+
+        arguments?.let {
+            tv_message_notif.text = it.getString(KEY_MESSAGE)
+            btn_back_login.visibility = GONE
+        }
 
         btn_back_login.setOnClickListener {
             startActivity(Intent(context,LoginActivity::class.java))

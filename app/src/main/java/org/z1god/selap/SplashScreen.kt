@@ -15,6 +15,6 @@ import org.z1god.selap.OnBoarding.OnBoardingActivity
         Handler().postDelayed(Runnable {
             startActivity(Intent(MainActivity@this, OnBoardingActivity::class.java))
             finish()
-        },2500);
+        },3000);
     }
 }

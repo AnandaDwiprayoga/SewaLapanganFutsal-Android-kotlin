@@ -57,14 +57,14 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btn_login.setOnClickListener {
-            if (MyInternet.checkNetworkInfo(this)) {
-                if(validateInput()){
+            if (validateInput()) {
+                if(MyInternet.checkNetworkInfo(this)){
                     loading_login.visibility = View.VISIBLE
                     login()
+                }else {
+                    val connectionInfoFragment = ConnectionInfoFragment()
+                    connectionInfoFragment.show(supportFragmentManager, connectionInfoFragment.tag)
                 }
-            } else {
-                val connectionInfoFragment = ConnectionInfoFragment()
-                connectionInfoFragment.show(supportFragmentManager, connectionInfoFragment.tag)
             }
         }
 
@@ -127,10 +127,10 @@ class LoginActivity : AppCompatActivity() {
                     Snackbar.make(window.decorView.rootView, e.message!!, Snackbar.LENGTH_SHORT)
                         .show();
                     // ...
+                    loading_login.visibility = View.INVISIBLE
                 }
             }
         }
-        loading_login.visibility = View.INVISIBLE
     }
 
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
@@ -138,6 +138,9 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener {
                 if(it.isSuccessful){
+                    loading_login.visibility = View.INVISIBLE
+                    btn_gmail.isEnabled = false
+
                     MyPreferences.setIsLogin()
                     startActivity(Intent(LoginActivity@ this, MainActivity::class.java))
                     finish()

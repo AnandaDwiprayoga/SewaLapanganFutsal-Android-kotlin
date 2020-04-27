@@ -8,17 +8,17 @@
     android:paddingStart="16dp"
     android:paddingEnd="16dp"
     android:paddingTop="28dp"
+    android:background="@android:color/white"
     >
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/internet"/>
+        android:src="@drawable/no_internet"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
         android:fontFamily="@font/montserrat_bold"
         android:text="Ooops! No Internet"
         android:textAlignment="center"
